@@ -1,0 +1,28 @@
+/* Estilos provisionales para maquetado */
+header {
+    background-color: aqua;
+}
+
+nav {
+    background-color: darkslategray;
+}
+
+a {
+    color: black;
+}
+
+main {
+    background-color: aliceblue;
+}
+
+article {
+    background-color: aquamarine;
+}
+
+aside {
+    background-color: blanchedalmond;
+}
+
+footer {
+    background-color: coral;
+}
