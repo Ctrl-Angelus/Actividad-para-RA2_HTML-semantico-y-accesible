@@ -9,6 +9,10 @@
     <!-- CDN de la hoja de estilos de Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <!-- CDN de la hoja de estilos de Prism para resaltar el código -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+
     <!-- Link a la hoja de estilos css -->
     <link rel="stylesheet" href="./style.css">
 </head>
@@ -29,15 +33,81 @@
     </header>
     <main>
         <div class="container">
-            <h1 class="container">Desarrollo de juegos 2D con la librería de Pygame</h1>
+            <h1 class="text-center">Desarrollo de juegos 2D con la librería de Pygame</h1>
             <div class="row">
-                <article class="col-12 col-lg-8">
-                    <section></section>
-                    <section></section>
-                    <section></section>
-                    <section></section>
+                <article class="col-12 col-lg-10">
+                    <section>
+                        <h2>Introducción a Pygame</h2>
+
+                        <h3>¿Qué es Pygame?</h3>
+                        <p>Pygame es una librería del lenguaje de programación Python, pensada para crear aplicaciones
+                            multimedia y videojuegos 2D. Esta librería está basada en la biblioteca SDL (Simple
+                            DirectMedia Layer), lo que le permite ejecutarse en cualquier sistema que tenga soporte para
+                            esta biblioteca (Windows, Linux, MacOS y otros). Pygame ofrece una variedad de diferentes
+                            módulos y herramientas que permiten crear y manejar ventanas, elementos gráficos,
+                            colisiones, eventos, imágenes sonidos, entre muchas otras cosas.</p>
+
+                        <h3>Ventajas de Pygame sobre otras alternativas de desarrollo 2D</h3>
+                        <p>Una de las principales características que hacen destacar a Pygame sobre alternativas como
+                            Pyglet o librerías de otros lenguajes como Raylib es su facilidad de uso. Gracias a la
+                            sintaxis simple del lenguaje de programación Python y a que Pygame está basado en SDL,
+                            muchos de los conceptos más abstractos y de bajo nivel, como el manejo de sonido, memoria
+                            gráfica o eventos le permiten al desarrollador enfocarse principalmente en desarrollar la
+                            lógica de la aplicación, sin generar una curva de aprendizaje tan compleja.</p>
+                        <p>Otra de las razones por las que Pygame es una opción bastante conveniente es su
+                            multiplataforma nativa y su bajo impacto en los recursos del sistema, gracias a ser
+                            esencialmente una envoltura de SDL. Además, Pygame cuenta con una comunidad enorme de
+                            desarrolladores que crean documentación, recursos educativos, tutoriales y ejemplos.</p>
+
+                        <h3>Instalación de la librería y el entorno</h3>
+                        <p>Instalar la librería usando un gestor de paquetes (pip, conda, uv), es recomendable instalar
+                            el paquete pygame-ce, es un fork creado por la comunidad que tiene varios cambios por
+                            delante de la librería normal.</p>
+                        <figure>
+                            <pre>
+                                <code class="language-bash">
+                                    pip install pygame-ce
+                                    conda install pygame-ce
+                                    uv install pygame-ce
+                                </code>
+                            </pre>
+                        </figure>
+
+                        <p>De esta forma, Pygame se instalará de forma global en el sistema, sin embargo, en sistemas
+                            como linux, donde Python es una dependencia interna del sistema, es mejor crear un entorno
+                            virtual dentro del directorio de trabajo e instalar la dependencia allí dentro.</p>
+
+                        <figure>
+                            <pre>
+                                <code class="language-bash">
+                                    python3 -m venv venv
+                                    source venv/bin/activate
+                                    pip install pygame-ce
+                                </code>
+                            </pre>
+                        </figure>
+
+                    </section>
+                    <section>
+                        <h2>Estructura básica de un programa en Pygame</h2>
+                    </section>
+                    <section>
+                        <h2>Ciclo de Juego</h2>
+                    </section>
+                    <section>
+                        <h2>Dibujar elementos</h2>
+                    </section>
+                    <section>
+                        <h2>Eventos de teclado</h2>
+                    </section>
+                    <section>
+                        <h2>Colisiones</h2>
+                    </section>
+                    <section>
+                        <h2>Imágenes y sonido</h2>
+                    </section>
                 </article>
-                <aside class="col-12 col-lg-4">
+                <aside class="col-12 col-lg-2 d-flex flex-column text-break">
                     <a href="">Seccion 1</a>
                     <a href="">Seccion 2</a>
                     <a href="">Seccion 3</a>
@@ -56,10 +126,17 @@
         </div>
     </footer>
 
+    <!-- CDN al JavaScript de Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+    <!-- CDN al JavaScript de Prism para eliminar espacios en el código -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/normalize-whitespace/prism-normalize-whitespace.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
 </body>
-<!-- CDN al JavaScript de Bootstrap -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-    crossorigin="anonymous"></script>
 
 </html>
