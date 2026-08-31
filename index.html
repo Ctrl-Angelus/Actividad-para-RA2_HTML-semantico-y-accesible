@@ -20,16 +20,36 @@
 </head>
 
 <body>
+    <!-- 
+      Se utiliza la etiqueta semántica <header> junto con la clase 
+      sticky-top de Bootstrap para mantener la cabecera fija de manera accesible.
+    -->
     <header class="sticky-top">
         <div class="container nav-container">
+            <!-- 
+              Uso de la etiqueta <nav> con el atributo aria-label 
+              para identificar el propósito de la región de navegación para lectores de pantalla.
+            -->
             <nav class="navbar navbar-expand-lg px-4" aria-label="Navegación principal">
 
+                <!-- 
+                  El enlace de la marca utiliza aria-label para describir 
+                  claramente el destino y contexto del enlace a los usuarios de tecnologías de asistencia.
+                -->
                 <a href="#" class="navbar-brand" aria-label="Página de inicio - Desarrollo con Pygame">
+                        <!-- 
+                          Uso de aria-hidden="true" en el icono decorativo 
+                          para evitar que los lectores de pantalla lean ruido innecesario.
+                        -->
                         <i class="bi bi-css" aria-hidden="true"></i>
                         Actividad Diseño Web
                 </a>
 
-                <!-- Botón hamburguesa -->
+                <!-- 
+                  Configuración del botón del menú desplegable (hamburguesa) 
+                  con atributos ARIA completos (aria-controls, aria-expanded, aria-label) para comunicar 
+                  su estado y función actual a tecnologías de asistencia.
+                -->
                 <button
                     class="navbar-toggler"
                     type="button"
@@ -50,6 +70,10 @@
                         </li>
 
                         <li class="nav-item">
+                            <!-- 
+                              Se añade rel="noopener noreferrer" por seguridad al abrir 
+                              enlaces externos en una pestaña nueva, acompañado de un aria-label descriptivo.
+                            -->
                             <a
                                 class="nav-link"
                                 href="https://github.com/Ctrl-Angelus"
@@ -68,9 +92,18 @@
     <main>
         <div class="container">
             <div class="row">
+                <!-- 
+                  Uso de la etiqueta semántica <aside> con aria-label 
+                  para definir claramente la sección de índice o contenido complementario. 
+                  Se emplea order-first en diseño adaptable para priorizar la navegación en pantallas móviles.
+                -->
                 <aside class="col-12 col-lg-2 order-first" aria-label="Índice de contenidos">
                     <div class="sticky-lg-top p-3 mb-3" style="top: 6rem;">
                         <h3>Contenido</h3>
+                        <!-- 
+                          Anidación de un elemento <nav> adicional con aria-label 
+                          específico para distinguir la navegación interna del índice respecto a la barra principal.
+                        -->
                         <nav class="nav flex-column gap-2" aria-label="Navegación interna de la guía">
                             <a class="nav-link p-0" href="#introduccion">Introducción</a>
                             <a class="nav-link p-0" href="#estructura-basica">Estructura básica</a>
@@ -83,9 +116,21 @@
                         </nav>
                     </div>
                 </aside>
+                <!-- 
+                  Uso de la etiqueta semántica <article> para englobar 
+                  el contenido principal e independiente de la guía.
+                -->
                 <article class="col-12 col-lg-10">
                     <h1 class="text-center mt-4" >Desarrollo de juegos 2D con la librería de Pygame</h1>
+                    <!-- 
+                      Agrupación de la imagen y su descripción mediante 
+                      <figure> y <figcaption> para asociar semánticamente el texto explicativo con el gráfico.
+                    -->
                     <figure class="article-banner mb-4">
+                        <!-- 
+                          Inclusión de un atributo alt descriptivo y uso de 
+                          loading="eager" para priorizar la carga de la imagen principal visible al cargar la página.
+                        -->
                         <img 
                             src="./assets/Banner.png" 
                             alt="Desarrollo de videojuegos en 2D con la librería Pygame" 
@@ -168,7 +213,7 @@
                                 pygame.quit()
                                 sys.exit()
                             </code></pre>
-                            <figcaption>Creación de una superficie personalizada y su renderizado con blit</figcaption>
+                            <figcaption>Estructura básica de un programa en Pygame</figcaption>
                         </figure>
 
                         <p>Este esqueleto se encarga de hacer una variedad de pasos para asegurar que la aplicación funcione: en primer lugar se inicializa Pygame, paso necesario para acceder a sus utilidades; se configura la ventana, el ancho, alto y el título que se va a mostrar; se crea un reloj para limitar los cuadros por segundo que Pygame tiene permitido dibujar, lo que permite mantener el juego consistente en diferentes dispositivos que pueden variar en potencia de cómputo; la creación del game loop o ciclo de juego, este ciclo se encarga de realizar una serie de acciones cada vez que se pinta la ventana del juego, como pintar objetos, fondos o animaciones; finalmente se cierra pygame y se le envía una señal de exit al sistema para eliminar la ventana del juego cuando ya no es requerida.</p>
@@ -382,6 +427,10 @@
     <footer>
         <div class="container d-flex flex-column p-4">
             <p class="text-center">© 2026 — Actividad de Diseño web de Miguel Ortiz</p>
+            <!-- 
+              Inclusión de rel="noopener noreferrer" y aria-label 
+              en el enlace del pie de página para garantizar seguridad y contexto a lectores de pantalla.
+            -->
             <a href="https://github.com/Ctrl-Angelus/Actividad-para-RA2_HTML-semantico-y-accesible" target="_blank" rel="noopener noreferrer" class="mx-auto text-center" aria-label="Ver el código fuente completo de esta actividad en GitHub">
                 Código Fuente de la actividad en Github <i class="bi bi-github" aria-hidden="true"></i>
             </a>
