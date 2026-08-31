@@ -85,7 +85,7 @@ aside .nav-link:focus-visible {
 }
 
 code {
-    color: #b8520f;
+    color: #6e5335;
 }
 
 h1,
@@ -94,6 +94,18 @@ h2 {
     margin-bottom: 10px
 }
 
+h2 {background-color:  #fbeee5;}
+
 h3 {
     color: #097a8e;
+}
+
+figcaption {
+    color: #593200;
+}
+
+hr {
+    border: none;
+    height: 2px;
+    background-color: #097a8e;
 }

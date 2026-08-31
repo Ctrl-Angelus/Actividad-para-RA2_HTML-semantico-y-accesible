@@ -46,7 +46,7 @@
                     <ul class="navbar-nav ms-auto">
 
                         <li class="nav-item">
-                            <a class="nav-link" href="https://github.com/Ctrl-Angelus/Actividad-para-RA2_HTML-semantico-y-accesible/blob/main/README.md">README</a>
+                            <a class="nav-link" href="https://github.com/Ctrl-Angelus/Actividad-para-RA2_HTML-semantico-y-accesible/blob/main/README.md" target="_blank">README</a>
                         </li>
 
                         <li class="nav-item">
@@ -118,7 +118,7 @@
                             <figcaption>Creación de entorno virtual en python</figcaption>
                         </figure>
                     </section>
-
+                    <hr>
                     <section class="mt-3 p-4">
                         <h2 id="estructura-basica" >Estructura básica de un programa en Pygame</h2>
                         <p>La gran mayoría de programas de Pygame tienen el siguiente esqueleto (no es necesario importar explícitamente pygame-ce):</p>
@@ -163,7 +163,7 @@
 
                         <p>Este esqueleto se encarga de hacer una variedad de pasos para asegurar que la aplicación funcione: en primer lugar se inicializa Pygame, paso necesario para acceder a sus utilidades; se configura la ventana, el ancho, alto y el título que se va a mostrar; se crea un reloj para limitar los cuadros por segundo que Pygame tiene permitido dibujar, lo que permite mantener el juego consistente en diferentes dispositivos que pueden variar en potencia de cómputo; la creación del game loop o ciclo de juego, este ciclo se encarga de realizar una serie de acciones cada vez que se pinta la ventana del juego, como pintar objetos, fondos o animaciones; finalmente se cierra pygame y se le envía una señal de exit al sistema para eliminar la ventana del juego cuando ya no es requerida.</p>
                     </section>
-
+                    <hr>
                     <section class="mt-3 p-4">
                         <h2 id="ciclo-de-juego" >Ciclo de Juego</h2>
                         <p>El ciclo de juego (o <em>game loop</em>) es la estructura central de cualquier programa hecho con Pygame. Se trata de un bucle que se repite constantemente, decenas de veces por segundo, y que en cada repetición realiza tres tareas principales: capturar los eventos del usuario (teclado, mouse, cierre de ventana), actualizar la lógica del juego (posiciones, físicas, puntuación) y finalmente dibujar todo en pantalla. Sin este ciclo, la ventana se abriría y se cerraría de inmediato, ya que el programa terminaría su ejecución en el primer fotograma.</p>
@@ -197,10 +197,10 @@
                         <h3 >¿Por qué es importante el orden?</h3>
                         <p>Procesar primero los eventos garantiza que la lógica del juego reaccione a la entrada más reciente del usuario, y dibujar al final asegura que en pantalla se muestre siempre el estado más actualizado antes de pasar al siguiente fotograma.</p>
                     </section>
-
+                    <hr>
                     <section class="mt-3 p-4">
                         <h2 id="dibujar-elementos" >Dibujar elementos</h2>
-                        <h3 >El módulo <code>pygame.draw</code></h3>
+                        <h3 >El módulo pygame.draw</h3>
                         <p>Pygame incluye el módulo <code>draw</code>, que permite dibujar formas geométricas básicas directamente sobre una superficie (<code>Surface</code>), como la pantalla del juego. Cada función recibe la superficie destino, un color en formato RGB y las coordenadas o dimensiones de la forma.</p>
                         <figure>
                             <pre><code class="language-python">
@@ -219,7 +219,7 @@
                         <h3 >Colores en formato RGB</h3>
                         <p>Los colores en Pygame se definen como tuplas de tres valores <code>(R, G, B)</code>, donde cada componente (rojo, verde y azul) va de 0 a 255. Por ejemplo, <code>(0, 0, 0)</code> representa negro y <code>(255, 255, 255)</code> representa blanco.</p>
 
-                        <h3 >Superficies (<code>Surface</code>)</h3>
+                        <h3 >Superficies (Surface)</h3>
                         <p>Toda imagen o forma en Pygame se dibuja sobre una <code>Surface</code>, que puede pensarse como un lienzo. La propia ventana del juego, creada con <code>pygame.display.set_mode()</code>, es en realidad una <code>Surface</code>. También se pueden crear superficies adicionales, útiles para agrupar elementos o aplicar transparencias.</p>
                         <figure>
                             <pre><code class="language-python">
@@ -230,7 +230,7 @@
                             <figcaption>Creación de una superficie personalizada y su renderizado con blit</figcaption>
                         </figure>
                     </section>
-
+                    <hr>
                     <section class="mt-3 p-4">
                         <h2 id="eventos-de-teclado" >Eventos de teclado</h2>
                         <h3 >Dos formas de capturar el teclado</h3>
@@ -275,7 +275,7 @@
                             <figcaption>Movimiento continuo de un objeto usando las teclas de dirección</figcaption>
                         </figure>
                     </section>
-
+                    <hr>
                     <section class="mt-3 p-4">
                         <h2 id="colisiones" >Colisiones</h2>
                         <h3 >El objeto Rect</h3>
@@ -311,7 +311,7 @@
                         <h3 >Grupos de sprites (Group)</h3>
                         <p>Para proyectos más grandes, Pygame ofrece la clase <code>pygame.sprite.Group</code>, que organiza objetos <code>Sprite</code> y permite comprobar colisiones entre grupos completos con funciones como <code>pygame.sprite.spritecollide()</code>, simplificando juegos con muchos elementos en pantalla.</p>
                     </section>
-
+                    <hr>
                     <section class="mt-3 p-4">
                         <h2 id="imagenes-y-sonido" >Imágenes y sonido</h2>
                         <h3 >Cargar y mostrar imágenes</h3>
@@ -351,7 +351,7 @@
                             <figcaption>Reproducción de música de fondo y un efecto de sonido</figcaption>
                         </figure>
                     </section>
-
+                    <hr>
                     <section class="mt-3 p-4">
                         <h2 id="ejemplo-practico" >Ejemplo práctico</h2>
                         <p>Aplicando los conceptos de esta guía, desarrollé el siguiente juego con Pygame:</p>
