@@ -334,6 +334,54 @@
                     </section>
                     <section>
                         <h2>Imágenes y sonido</h2>
+                        <h3>Cargar y mostrar imágenes</h3>
+                        <p>Las imágenes se cargan con <code>pygame.image.load()</code> y se dibujan en pantalla mediante el
+                            método <code>blit()</code>, que copia una superficie (la imagen) sobre otra (la pantalla) en una
+                            posición determinada. Añadir <code>.convert_alpha()</code> mejora el rendimiento y preserva la
+                            transparencia en imágenes PNG.</p>
+                        <figure>
+                            <pre>
+                                <code class="language-python">
+                                    nave = pygame.image.load("nave.png").convert_alpha()
+                                    x, y = 400, 300
+
+                                    pantalla.blit(nave, (x, y))
+                                </code>
+                            </pre>
+                            <figcaption>Carga y renderizado de una imagen con blit</figcaption>
+                        </figure>
+
+                        <h3>Redimensionar imágenes</h3>
+                        <p>Si una imagen no tiene el tamaño deseado, se puede escalar con <code>pygame.transform.scale()</code>
+                            antes de dibujarla en pantalla.</p>
+                        <figure>
+                            <pre>
+                                <code class="language-python">
+                                    nave = pygame.image.load("nave.png").convert_alpha()
+                                    nave = pygame.transform.scale(nave, (64, 64))
+                                </code>
+                            </pre>
+                            <figcaption>Redimensionamiento de una imagen a 64x64 píxeles</figcaption>
+                        </figure>
+
+                        <h3>Música y efectos de sonido</h3>
+                        <p>Pygame separa el manejo de audio en dos partes: <code>pygame.mixer.music</code> para música de fondo
+                            (pensada para archivos largos, reproducidos en streaming) y <code>pygame.mixer.Sound</code> para
+                            efectos cortos, como disparos o saltos, que se cargan completamente en memoria.</p>
+                        <figure>
+                            <pre>
+                                <code class="language-python">
+                                    # Música de fondo
+                                    pygame.mixer.music.load("musica.mp3")
+                                    pygame.mixer.music.play(-1)  # -1 = repetir en bucle infinito
+
+                                    # Efecto de sonido
+                                    efecto_disparo = pygame.mixer.Sound("disparo.wav")
+                                    efecto_disparo.play()
+                                </code>
+                            </pre>
+                            <figcaption>Reproducción de música de fondo y un efecto de sonido</figcaption>
+                        </figure>
                     </section>
                 </article>
                 <aside class="col-12 col-lg-2">
