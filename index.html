@@ -288,6 +288,49 @@
                     </section>
                     <section>
                         <h2>Colisiones</h2>
+                        <h3>El objeto Rect</h3>
+                        <p>La forma más común de detectar colisiones en Pygame es mediante el objeto <code>pygame.Rect</code>,
+                            un rectángulo definido por una posición (x, y) y unas dimensiones (ancho, alto). Además de servir
+                            para colisiones, los objetos <code>Rect</code> también se utilizan para posicionar imágenes y
+                            elementos gráficos.</p>
+                        <figure>
+                            <pre>
+                                <code class="language-python">
+                                    jugador = pygame.Rect(100, 100, 50, 50)
+                                    enemigo = pygame.Rect(300, 300, 50, 50)
+
+                                    if jugador.colliderect(enemigo):
+                                        print("Colisión detectada")
+                                </code>
+                            </pre>
+                            <figcaption>Detección de colisión entre dos rectángulos con colliderect</figcaption>
+                        </figure>
+
+                        <h3>Colisiones con múltiples objetos</h3>
+                        <p>Cuando se necesita comprobar la colisión de un objeto contra varios a la vez (por ejemplo, una bala
+                            contra una lista de enemigos), Pygame ofrece funciones auxiliares como <code>collidelist()</code> y
+                            <code>collidelistall()</code>, que evitan escribir un bucle manual de comparaciones.</p>
+                        <figure>
+                            <pre>
+                                <code class="language-python">
+                                    bala = pygame.Rect(150, 150, 10, 10)
+                                    enemigos = [
+                                        pygame.Rect(140, 140, 30, 30),
+                                        pygame.Rect(400, 400, 30, 30),
+                                    ]
+
+                                    indice = bala.collidelist(enemigos)
+                                    if indice != -1:
+                                        print(f"Colisión con el enemigo número {indice}")
+                                </code>
+                            </pre>
+                            <figcaption>Detección de colisión contra una lista de rectángulos</figcaption>
+                        </figure>
+
+                        <h3>Grupos de sprites (Group)</h3>
+                        <p>Para proyectos más grandes, Pygame ofrece la clase <code>pygame.sprite.Group</code>, que organiza
+                            objetos <code>Sprite</code> y permite comprobar colisiones entre grupos completos con funciones como
+                            <code>pygame.sprite.spritecollide()</code>, simplificando juegos con muchos elementos en pantalla.</p>
                     </section>
                     <section>
                         <h2>Imágenes y sonido</h2>
