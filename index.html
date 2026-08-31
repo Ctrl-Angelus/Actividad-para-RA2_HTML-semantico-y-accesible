@@ -36,9 +36,23 @@
     <main>
         <div class="container">
             <div class="row">
+                <aside class="col-12 col-lg-2 order-first">
+                    <div class="sticky-lg-top p-3 mb-3" style="top: 6rem;">
+                        <h5>Contenido</h5>
+                        <nav class="nav flex-column gap-2">
+                            <a class="nav-link p-0 " href="#">introducción</a>
+                            <a class="nav-link p-0 " href="#">estructura básica</a>
+                            <a class="nav-link p-0 " href="#">ciclo de juego</a>
+                            <a class="nav-link p-0 " href="#">dibujar elementos</a>
+                            <a class="nav-link p-0 " href="#">eventos de teclado</a>
+                            <a class="nav-link p-0 " href="#">colisiones</a>
+                            <a class="nav-link p-0 " href="#">imágenes y sonido</a>
+                        </nav>
+                    </div>
+                </aside>
                 <article class="col-12 col-lg-10">
                     <h1 class="text-center">Desarrollo de juegos 2D con la librería de Pygame</h1>
-                    <section>
+                    <section class="mt-3 p-4">
                         <h2>Introducción a Pygame</h2>
 
                         <h3>¿Qué es Pygame?</h3>
@@ -93,7 +107,7 @@
 
 
                     </section>
-                    <section>
+                    <section class="mt-3 p-4">
                         <h2>Estructura básica de un programa en Pygame</h2>
                         <p>La gran mayoría de programas de Pygame tienen el siguiente esqueleto (no es necesario
                             importar explícitamente pygame-ce):</p>
@@ -147,7 +161,7 @@
                             pinta la ventana del juego, como pintar objetos, fondos o animaciones; finalmente se cierra pygame y se le envía una
                             señal de exit al sistema para eliminar la ventana del juego cuando ya no es requerida.</p>
                     </section>
-                    <section>
+                    <section class="mt-3 p-4">
                         <h2>Ciclo de Juego</h2>
                         <p>El ciclo de juego (o <em>game loop</em>) es la estructura central de cualquier programa hecho con Pygame.
                             Se trata de un bucle que se repite constantemente, decenas de veces por segundo, y que en cada
@@ -191,7 +205,7 @@
                             asegura que en pantalla se muestre siempre el estado más actualizado antes de pasar al siguiente
                             fotograma.</p>
                     </section>
-                    <section>
+                    <section class="mt-3 p-4">
                         <h2>Dibujar elementos</h2>
                         <h3>El módulo <code>pygame.draw</code></h3>
                         <p>Pygame incluye el módulo <code>draw</code>, que permite dibujar formas geométricas básicas directamente
@@ -234,7 +248,7 @@
                             <figcaption>Creación de una superficie personalizada y su renderizado con blit</figcaption>
                         </figure>
                     </section>
-                    <section>
+                    <section class="mt-3 p-4">
                         <h2>Eventos de teclado</h2>
                         <h3>Dos formas de capturar el teclado</h3>
                         <p>Pygame ofrece dos maneras de reaccionar a la entrada del teclado: mediante el sistema de eventos
@@ -286,7 +300,7 @@
                             <figcaption>Movimiento continuo de un objeto usando las teclas de dirección</figcaption>
                         </figure>
                     </section>
-                    <section>
+                    <section class="mt-3 p-4">
                         <h2>Colisiones</h2>
                         <h3>El objeto Rect</h3>
                         <p>La forma más común de detectar colisiones en Pygame es mediante el objeto <code>pygame.Rect</code>,
@@ -332,7 +346,7 @@
                             objetos <code>Sprite</code> y permite comprobar colisiones entre grupos completos con funciones como
                             <code>pygame.sprite.spritecollide()</code>, simplificando juegos con muchos elementos en pantalla.</p>
                     </section>
-                    <section>
+                    <section class="mt-3 p-4">
                         <h2>Imágenes y sonido</h2>
                         <h3>Cargar y mostrar imágenes</h3>
                         <p>Las imágenes se cargan con <code>pygame.image.load()</code> y se dibujan en pantalla mediante el
@@ -384,28 +398,14 @@
                         </figure>
                     </section>
                 </article>
-                <aside class="col-12 col-lg-2">
-                    <div class="sticky-top p-3 mb-3" style="top: 6rem;">
-                        <h5>Contenido</h5>
-                        <nav class="nav flex-column gap-2">
-                            <a class="nav-link p-0 " href="#">introducción</a>
-                            <a class="nav-link p-0 " href="#">estructura básica</a>
-                            <a class="nav-link p-0 " href="#">ciclo de juego</a>
-                            <a class="nav-link p-0 " href="#">dibujar elementos</a>
-                            <a class="nav-link p-0 " href="#">eventos de teclado</a>
-                            <a class="nav-link p-0 " href="#">colisiones</a>
-                            <a class="nav-link p-0 " href="#">imágenes y sonido</a>
-                        </nav>
-                    </div>
-                </aside>
             </div>
         </div>
     </main>
     <footer>
-        <div class="container">
-            <p>© 2026 — Actividad de Diseño web de Miguel Ortiz</p>
-            <a href="https://github.com/Ctrl-Angelus/Actividad-para-RA2_HTML-semantico-y-accesible" target="_blank">
-                Código Fuente en Github
+        <div class="container d-flex flex-column">
+            <p class="text-center">© 2026 — Actividad de Diseño web de Miguel Ortiz</p>
+            <a href="https://github.com/Ctrl-Angelus/Actividad-para-RA2_HTML-semantico-y-accesible" target="_blank" class="mx-auto text-center">
+                Código Fuente en Github <i class="bi bi-github"></i>
             </a>
         </div>
     </footer>
