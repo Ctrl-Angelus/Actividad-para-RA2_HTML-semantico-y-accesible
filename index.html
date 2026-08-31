@@ -7,14 +7,11 @@
     <title>Desarrollo con Pygame</title>
 
     <!-- CDN de la hoja de estilos de Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css">
 
     <!-- CDN de la hoja de estilos de Prism para resaltar el código -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
-
-    <!-- CDN de la hoja de estilos de Bootstrap para agregar íconos -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css">
 
     <!-- Link a la hoja de estilos css -->
     <link rel="stylesheet" href="./style.css">
@@ -25,7 +22,7 @@
         <div class="container">
             <nav class="navbar">
                 <a href="#" class="navbar-brand">
-                    <img src="" alt="logo" class="">
+                    <img src="x" alt="logo" class="">
                 </a>
                 <a href="">Opcion 1</a>
                 <a href="">Opcion 2</a>
@@ -38,9 +35,9 @@
     </header>
     <main>
         <div class="container">
-            <h1 class="text-center">Desarrollo de juegos 2D con la librería de Pygame</h1>
             <div class="row">
                 <article class="col-12 col-lg-10">
+                    <h1 class="text-center">Desarrollo de juegos 2D con la librería de Pygame</h1>
                     <section>
                         <h2>Introducción a Pygame</h2>
 
@@ -137,22 +134,57 @@
                             </pre>
                         </figure>
 
-                        <p>Este esqueleto se encarga de hacer una variedad de pasos para asegurar que la aplicación
-                            funcione: en primer lugar se
-                            inicializa Pygame, paso necesario para acceder a sus utilidades; se configura la ventana, el
-                            ancho, alto y el título
-                            que se va a mostrar; se crea un reloj para limitar los cuadros por segundo que Pygame tiene
-                            permitido dibujar, lo
-                            que permite mantener el juego consistente en diferentes dispositivos que pueden variar en
-                            potencia de cómputo; la
-                            creación del game loop o ciclo de juego, este ciclo se encarga de realizar una serie de
-                            acciones cada vez que se
-                            pinta la ventana del juego, como pintar objetos, fondos o animaciones; finalmente se cierra
-                            pygame y se le envía una
+                        <p>Este esqueleto se encarga de hacer una variedad de pasos para asegurar que la aplicación funcione: en primer lugar se
+                            inicializa Pygame, paso necesario para acceder a sus utilidades; se configura la ventana, el ancho, alto y el título
+                            que se va a mostrar; se crea un reloj para limitar los cuadros por segundo que Pygame tiene permitido dibujar, lo
+                            que permite mantener el juego consistente en diferentes dispositivos que pueden variar en potencia de cómputo; la
+                            creación del game loop o ciclo de juego, este ciclo se encarga de realizar una serie de acciones cada vez que se
+                            pinta la ventana del juego, como pintar objetos, fondos o animaciones; finalmente se cierra pygame y se le envía una
                             señal de exit al sistema para eliminar la ventana del juego cuando ya no es requerida.</p>
                     </section>
                     <section>
                         <h2>Ciclo de Juego</h2>
+                        <p>El ciclo de juego (o <em>game loop</em>) es la estructura central de cualquier programa hecho con Pygame.
+                            Se trata de un bucle que se repite constantemente, decenas de veces por segundo, y que en cada
+                            repetición realiza tres tareas principales: capturar los eventos del usuario (teclado, mouse, cierre
+                            de ventana), actualizar la lógica del juego (posiciones, físicas, puntuación) y finalmente dibujar
+                            todo en pantalla. Sin este ciclo, la ventana se abriría y se cerraría de inmediato, ya que el programa
+                            terminaría su ejecución en el primer fotograma.</p>
+
+                        <h3>Estructura del bucle principal</h3>
+                        <p>Un ciclo de juego típico en Pygame se apoya en un objeto <b>Clock</b>, que permite controlar
+                            la velocidad de ejecución del programa limitando los fotogramas por segundo (FPS).</p>
+                        <figure>
+                            <pre>
+                                <code class="language-python">
+                                    reloj = pygame.time.Clock()
+                                    corriendo = True
+
+                                    while corriendo:
+                                    # 1. Manejo de eventos
+                                    for evento in pygame.event.get():
+                                    if evento.type == pygame.QUIT:
+                                    corriendo = False
+
+                                    # 2. Lógica del juego
+                                    # (actualizar posiciones, detectar colisiones, etc.)
+
+                                    # 3. Dibujado
+                                    pantalla.fill((0, 0, 0))
+                                    pygame.display.flip()
+
+                                    # 4. Control de velocidad (FPS)
+                                    reloj.tick(60)
+                                </code>
+                            </pre>
+                            <figcaption>Estructura básica del ciclo de juego con control de FPS</figcaption>
+                        </figure>
+
+                        <h3>¿Por qué es importante el orden?</h3>
+                        <p>Procesar primero los eventos
+                            garantiza que la lógica del juego reaccione a la entrada más reciente del usuario, y dibujar al final
+                            asegura que en pantalla se muestre siempre el estado más actualizado antes de pasar al siguiente
+                            fotograma.</p>
                     </section>
                     <section>
                         <h2>Dibujar elementos</h2>
@@ -187,14 +219,11 @@
     </footer>
 
     <!-- CDN al JavaScript de Bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 
-    <!-- CDN al JavaScript de Prism para eliminar espacios en el código -->
+    <!-- CDN al JavaScript de Prism para eliminar espacios en el código y resaltar python y bash -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
-    <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/normalize-whitespace/prism-normalize-whitespace.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/normalize-whitespace/prism-normalize-whitespace.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
 </body>
