@@ -30,3 +30,7 @@ aside {
 footer {
     background-color: coral;
 }
+
+html {
+    scroll-padding-top: 90px; /* Ajusta este valor según la altura exacta de tu header */
+}
