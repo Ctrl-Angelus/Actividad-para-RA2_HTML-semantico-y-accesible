@@ -36,8 +36,10 @@ El desarrollo priorizó el cumplimiento riguroso de las pautas de accesibilidad 
 ## Estructura del Proyecto
 ```text
 /
-├── index.html        # Archivo principal con la estructura semántica y accesible
-├── style.css         # Hoja de estilos
+├── index.html        
+├── style.css        
+├── README.md         
 └── assets/           # Carpeta de recursos gráficos
-    ├── Banner.png    # Imagen de cabecera principal
-    └── Gif_AbyssBound.gif # Demostración animada del proyecto práctico
+    ├── Banner.png    
+    ├── css.svg    
+    └── Gif_AbyssBound.gif 
