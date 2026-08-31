@@ -1,36 +1,99 @@
-/* Estilos provisionales para maquetado */
-header {
-    background-color: aqua;
-}
-
-.nav-container {
-    background-color: darkslategray;
-}
-
-a {
-    color: black;
-}
-
-main {
-    background-color: aliceblue;
-}
-
-article {
-    background-color: aquamarine;
-}
-
-section {
-    background-color: darkcyan;
-}
-
-aside {
-    background-color: blanchedalmond;
-}
-
-footer {
-    background-color: coral;
+* {
+    --color-fondo: #fff3eb;
+    --color-header: #034a56;
+    --texto-header: #fff3eb;
 }
 
 html {
-    scroll-padding-top: 90px; /* Ajusta este valor según la altura exacta de tu header */
+    scroll-padding-top: 90px;
+}
+
+body {
+    background-color: var(--color-fondo);
+}
+
+header {
+    background-color: var(--color-header);
+    color: var(--texto-header)
+}
+
+header .navbar .navbar-brand,
+header .navbar .nav-link {
+    color: #fff3eb;
+}
+
+header .navbar .nav-link:hover {
+    color: #ffa2aa;
+}
+
+header .navbar .nav-link:focus-visible {
+    color: #ffa2aa;
+    outline: 3px solid #ffa2aa;
+    outline-offset: 3px;
+}
+
+header .navbar-toggler {
+    border-color: #fff3eb;
+}
+
+header .navbar-toggler-icon {
+    filter: brightness(0) invert(1);
+}
+
+footer {
+    background-color: var(--color-header);
+    color: var(--texto-header)
+}
+
+footer a,
+footer i {
+    color: var(--texto-header)
+}
+
+article a {
+    color: #066b7d;
+}
+
+article a:hover {
+    color: #034a56;
+}
+
+article a:focus-visible {
+    outline: 3px solid #ffa2aa;
+    outline-offset: 3px;
+}
+
+aside {
+    background-color: #fae3d2;
+}
+
+aside .nav-link {
+    color: #034a56;
+    border-radius: 0.5rem;
+    padding: 0.5rem 0.75rem;
+}
+
+aside .nav-link:hover {
+    color: #06849a;
+    background-color: #e6f1ef;
+}
+
+aside .nav-link:focus-visible {
+    color: #034a56;
+    outline: 3px solid #ffa2aa;
+    outline-offset: 2px;
+}
+
+code {
+    color: #b8520f;
+}
+
+h1,
+h2 {
+    color: #593200;
+    margin-bottom: 10px
+}
+
+h3 {
+    color: #097a8e;
 }
