@@ -33,6 +33,11 @@ El desarrollo priorizó el cumplimiento riguroso de las pautas de accesibilidad 
 * **Seguridad en enlaces externos:** Todos los enlaces externos cuentan con las etiquetas `target="_blank"` y `rel="noopener noreferrer"`.
 * **Contraste y diseño adaptativo:** Se utilizaron hojas de estilo basadas en Bootstrap y esquemas de colores oscuros optimizados (como Prism para bloques de código) para una correcta lectura visual.
 
+## ¿Cómo visualizar la página?
+La página se puede visualizar en el enlace de github pages
+[Visita la página en GitHub Pages](https://ctrl-angelus.github.io/Actividad-para-RA2_HTML-semantico-y-accesible/)
+O se puede visualizar clonando este repositorio y abriendo el archivo index.html en el navegador.
+
 ## Estructura del Proyecto
 ```text
 /
@@ -43,3 +48,4 @@ El desarrollo priorizó el cumplimiento riguroso de las pautas de accesibilidad 
     ├── Banner.png    
     ├── css.svg    
     └── Gif_AbyssBound.gif 
+
