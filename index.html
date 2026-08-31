@@ -74,6 +74,7 @@
                                 </code>
                             </pre>
                         </figure>
+                        <figcaption>Instalación de dependencias</figcaption>
 
                         <p>De esta forma, Pygame se instalará de forma global en el sistema, sin embargo, en sistemas
                             como linux, donde Python es una dependencia interna del sistema, es mejor crear un entorno
@@ -88,6 +89,8 @@
                                 </code>
                             </pre>
                         </figure>
+                        <figcaption>Creación de entorno virtual en python</figcaption>
+
 
                     </section>
                     <section>
@@ -115,24 +118,26 @@
                                     corriendo = True
                                     while corriendo:
 
-                                    # 1. Manejo de eventos
-                                    for evento in pygame.event.get():
-                                    if evento.type == pygame.QUIT:
-                                    corriendo = False
+                                        # 1. Manejo de eventos
+                                        for evento in pygame.event.get():
+                                            if evento.type == pygame.QUIT:
+                                                corriendo = False
 
-                                    # 2. Lógica del juego (actualizar posiciones, colisiones, etc.)
+                                        # 2. Lógica del juego (actualizar posiciones, colisiones, etc.)
 
-                                    # 3. Dibujar en pantalla
-                                    pantalla.fill((0, 0, 0)) # limpiar pantalla con color negro
+                                        # 3. Dibujar en pantalla
+                                        pantalla.fill((0, 0, 0)) # limpiar pantalla con color negro
 
-                                    pygame.display.flip() # actualizar la pantalla
-                                    reloj.tick(60) # limitar a 60 FPS
+                                        pygame.display.flip() # actualizar la pantalla
+                                        reloj.tick(60) # limitar a 60 FPS
 
                                     pygame.quit()
                                     sys.exit()
                                 </code>
                             </pre>
                         </figure>
+                        <figcaption>Creación de una superficie personalizada y su renderizado con blit</figcaption>
+
 
                         <p>Este esqueleto se encarga de hacer una variedad de pasos para asegurar que la aplicación funcione: en primer lugar se
                             inicializa Pygame, paso necesario para acceder a sus utilidades; se configura la ventana, el ancho, alto y el título
@@ -152,7 +157,7 @@
                             terminaría su ejecución en el primer fotograma.</p>
 
                         <h3>Estructura del bucle principal</h3>
-                        <p>Un ciclo de juego típico en Pygame se apoya en un objeto <b>Clock</b>, que permite controlar
+                        <p>Un ciclo de juego típico en Pygame se apoya en un objeto <code>Clock</code>, que permite controlar
                             la velocidad de ejecución del programa limitando los fotogramas por segundo (FPS).</p>
                         <figure>
                             <pre>
@@ -161,20 +166,20 @@
                                     corriendo = True
 
                                     while corriendo:
-                                    # 1. Manejo de eventos
-                                    for evento in pygame.event.get():
-                                    if evento.type == pygame.QUIT:
-                                    corriendo = False
+                                        # 1. Manejo de eventos
+                                        for evento in pygame.event.get():
+                                            if evento.type == pygame.QUIT:
+                                                corriendo = False
 
-                                    # 2. Lógica del juego
-                                    # (actualizar posiciones, detectar colisiones, etc.)
+                                        # 2. Lógica del juego
+                                        # (actualizar posiciones, detectar colisiones, etc.)
 
-                                    # 3. Dibujado
-                                    pantalla.fill((0, 0, 0))
-                                    pygame.display.flip()
+                                        # 3. Dibujado
+                                        pantalla.fill((0, 0, 0))
+                                        pygame.display.flip()
 
-                                    # 4. Control de velocidad (FPS)
-                                    reloj.tick(60)
+                                        # 4. Control de velocidad (FPS)
+                                        reloj.tick(60)
                                 </code>
                             </pre>
                             <figcaption>Estructura básica del ciclo de juego con control de FPS</figcaption>
@@ -188,9 +193,98 @@
                     </section>
                     <section>
                         <h2>Dibujar elementos</h2>
+                        <h3>El módulo <code>pygame.draw</code></h3>
+                        <p>Pygame incluye el módulo <code>draw</code>, que permite dibujar formas geométricas básicas directamente
+                            sobre una superficie (<code>Surface</code>), como la pantalla del juego. Cada función recibe la
+                            superficie destino, un color en formato RGB y las coordenadas o dimensiones de la forma.</p>
+                        <figure>
+                            <pre>
+                                <code class="language-python">
+                                    # Rectángulo: superficie, color, (x, y, ancho, alto)
+                                    pygame.draw.rect(pantalla, (255, 0, 0), (100, 100, 50, 50))
+
+                                    # Círculo: superficie, color, (centro_x, centro_y), radio
+                                    pygame.draw.circle(pantalla, (0, 255, 0), (400, 300), 40)
+
+                                    # Línea: superficie, color, punto_inicio, punto_fin, grosor
+                                    pygame.draw.line(pantalla, (255, 255, 255), (0, 0), (800, 600), 5)
+                                </code>
+                            </pre>
+                            <figcaption>Ejemplos de dibujo con el módulo pygame.draw</figcaption>
+                        </figure>
+
+                        <h3>Colores en formato RGB</h3>
+                        <p>Los colores en Pygame se definen como tuplas de tres valores <code>(R, G, B)</code>, donde cada
+                            componente (rojo, verde y azul) va de 0 a 255. Por ejemplo, <code>(0, 0, 0)</code> representa negro
+                            y <code>(255, 255, 255)</code> representa blanco.</p>
+
+                        <h3>Superficies (<code>Surface</code>)</h3>
+                        <p>Toda imagen o forma en Pygame se dibuja sobre una <code>Surface</code>, que puede pensarse como un
+                            lienzo. La propia ventana del juego, creada con <code>pygame.display.set_mode()</code>, es en
+                            realidad una <code>Surface</code>. También se pueden crear superficies adicionales, útiles para
+                            agrupar elementos o aplicar transparencias.</p>
+                        <figure>
+                            <pre>
+                                <code class="language-python">
+                                    superficie = pygame.Surface((100, 100))
+                                    superficie.fill((0, 150, 255))
+                                    pantalla.blit(superficie, (200, 200))
+                                </code>
+                            </pre>
+                            <figcaption>Creación de una superficie personalizada y su renderizado con blit</figcaption>
+                        </figure>
                     </section>
                     <section>
                         <h2>Eventos de teclado</h2>
+                        <h3>Dos formas de capturar el teclado</h3>
+                        <p>Pygame ofrece dos maneras de reaccionar a la entrada del teclado: mediante el sistema de eventos
+                            (<code>pygame.event.get()</code>), útil para acciones puntuales como saltar o pausar, y mediante
+                            <code>pygame.key.get_pressed()</code>, útil para movimientos continuos mientras una tecla permanece
+                            presionada.</p>
+
+                        <h3>Eventos puntuales (KEYDOWN / KEYUP)</h3>
+                        <figure>
+                            <pre>
+                                <code class="language-python">
+                                    for evento in pygame.event.get():
+                                        if evento.type == pygame.QUIT:
+                                            corriendo = False
+
+                                        if evento.type == pygame.KEYDOWN:
+                                            if evento.key == pygame.K_SPACE:
+                                                print("Salto")
+
+                                        if evento.type == pygame.KEYUP:
+                                            if evento.key == pygame.K_SPACE:
+                                                print("Tecla soltada")
+                                </code>
+                            </pre>
+                            <figcaption>Detección de una tecla presionada y soltada mediante eventos</figcaption>
+                        </figure>
+
+                        <h3>Movimiento continuo con get_pressed()</h3>
+                        <p>Para un movimiento fluido, como desplazar un personaje mientras se mantiene una tecla presionada,
+                            conviene revisar el estado del teclado en cada fotograma en lugar de depender de eventos puntuales.</p>
+                        <figure>
+                            <pre>
+                                <code class="language-python">
+                                    x, y = 400, 300
+                                    velocidad = 5
+
+                                    teclas = pygame.key.get_pressed()
+
+                                    if teclas[pygame.K_LEFT]:
+                                        x -= velocidad
+                                    if teclas[pygame.K_RIGHT]:
+                                        x += velocidad
+                                    if teclas[pygame.K_UP]:
+                                        y -= velocidad
+                                    if teclas[pygame.K_DOWN]:
+                                        y += velocidad
+                                </code>
+                            </pre>
+                            <figcaption>Movimiento continuo de un objeto usando las teclas de dirección</figcaption>
+                        </figure>
                     </section>
                     <section>
                         <h2>Colisiones</h2>
@@ -199,12 +293,18 @@
                         <h2>Imágenes y sonido</h2>
                     </section>
                 </article>
-                <aside class="col-12 col-lg-2 d-flex flex-column text-break">
-                    <a href="">Seccion 1</a>
-                    <a href="">Seccion 2</a>
-                    <a href="">Seccion 3</a>
-                    <a href="">Seccion 4</a>
-                    <a href="">Seccion 5</a>
+                <aside class="col-12 col-lg-2">
+                    <div class="sticky-top p-3 mb-3">Contenido</h5>
+                        <nav class="nav flex-column gap-2">
+                            <a class="nav-link p-0 " href="#">introducción</a>
+                            <a class="nav-link p-0 " href="#">estructura básica</a>
+                            <a class="nav-link p-0 " href="#">ciclo de juego</a>
+                            <a class="nav-link p-0 " href="#">dibujar elementos</a>
+                            <a class="nav-link p-0 " href="#">eventos de teclado</a>
+                            <a class="nav-link p-0 " href="#">colisiones</a>
+                            <a class="nav-link p-0 " href="#">imágenes y sonido</a>
+                        </nav>
+                    </div>
                 </aside>
             </div>
         </div>
